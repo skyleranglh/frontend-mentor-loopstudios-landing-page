@@ -1,0 +1,18 @@
+@forward "base";
+
+.hero {
+  height: 100vh;
+  background-image: url("../images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__border {
+    border: 2px solid white;
+    width: 20em;
+    padding: 1em;
+  }
+
+  &__heading {
+    font-size: 3.2rem;
+  }
+}
