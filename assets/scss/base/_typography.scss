@@ -7,3 +7,13 @@ a:is(:visited) {
   color: inherit;
   text-decoration: none;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", var(--font-stack);
+  text-transform: uppercase;
+}
