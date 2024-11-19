@@ -61,7 +61,7 @@
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("../images/mobile/image-hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,18 +81,83 @@
     padding: 1.2em;
     margin: 35% 0;
   }
-
-  &__heading {
-    font-size: 3.2rem;
-  }
 }
 
 .content {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  min-height: 100vh;
+  padding: 4em 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  text-align: center;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__description {
+    line-height: 1.4;
+  }
+}
+
+$article-images: "../images/mobile/images-deep-earth.jpg",
+  "../images/mobile/images-night-arcade.jpg",
+  "../images/mobile/images-soccer-team.jpg", "../images/mobile/images-grid.jpg",
+  "../images/mobile/images-from-above.jpg",
+  "../images/mobile/images-pocket-borealis.jpg",
+  "../images/mobile/images-curiosity.jpg", "../images/mobile/images-fisheye.jpg";
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2em;
+
+  &__articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1.4em;
+    height: 8em;
+    background-color: black;
+    text-align: left;
+
+    &__heading {
+      width: 5.4em;
+    }
+  }
+
+  &__button {
+    padding: 1em 2.4em;
+    border: 2px solid var(--color-black);
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8ch;
+    align-self: center;
+
+    &:is(:hover, :active, :focus) {
+      color: var(--color-white);
+      background-color: var(--color-black);
+    }
+  }
 }
 
 .footer {
-  height: 75vh;
+  min-height: 75vh;
   padding: 4em 0;
   text-align: center;
 
@@ -100,7 +165,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap: 2em;
+    gap: 4em;
     height: 100%;
   }
 
@@ -121,7 +186,7 @@
   .socials {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.4em;
 
     &__list {
       display: flex;
