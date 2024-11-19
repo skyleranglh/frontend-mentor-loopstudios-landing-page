@@ -1,15 +1,65 @@
 @forward "base";
 
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+
+  .navigation {
+    display: flex;
+
+    &__content {
+      display: none;
+    }
+
+    &__content.active {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-black);
+      padding: 0 5%;
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2em 0;
+      }
+
+      .navigation__list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.6em;
+        font-size: 2em;
+        font-family: "Josefin Sans";
+        margin: 35% 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
 .hero {
   height: 100vh;
   background-image: url("../images/mobile/image-hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (width >= 42em) {
+    background-image: url("../images/desktop/image-hero.jpg");
+    height: 50vh;
+  }
+
+  .container {
+    height: 100%;
+  }
+
   &__border {
     border: 2px solid white;
-    width: 20em;
-    padding: 1em;
+    width: 100%;
+    padding: 1.2em;
+    margin: 35% 0;
   }
 
   &__heading {

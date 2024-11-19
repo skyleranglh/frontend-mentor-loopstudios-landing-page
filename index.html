@@ -22,23 +22,69 @@
             src="assets/images/logo.svg"
             alt="loopstudios' logo"
           />
-          <ul class="navigation color-white">
-            <li class="navigation__item">
-              <a href="navigation__link">About</a>
-            </li>
-            <li class="navigation__item">
-              <a href="navigation__link">Careers</a>
-            </li>
-            <li class="navigation__item">
-              <a href="navigation__link">Events</a>
-            </li>
-            <li class="navigation__item">
-              <a href="navigation__link">Products</a>
-            </li>
-            <li class="navigation__item">
-              <a href="navigation__link">Support</a>
-            </li>
-          </ul>
+          <nav id="navigation" class="navigation" aria-label="Site">
+            <button
+              id="open-menu-button"
+              class="open-menu-button"
+              aria-expanded="false"
+              aria-hidden="false"
+              aria-labelledby="navigation__label"
+            >
+              <span id="navigation__label" class="navigation__label" hidden
+                >Navigation</span
+              >
+              <img
+                src="assets/images/icon-hamburger.svg"
+                alt="Hamburger open menu"
+                aria-hidden="false"
+              />
+            </button>
+            <div
+              id="navigation__content"
+              class="navigation__content"
+              role="dialog"
+              aria-labelledby="navigation__label"
+            >
+              <header>
+                <img
+                  class="logo"
+                  src="assets/images/logo.svg"
+                  alt="loopstudios' logo"
+                />
+                <button
+                  id="close-menu-button"
+                  class="close-menu-button"
+                  aria-hidden="true"
+                  aria-label="Close"
+                >
+                  <img
+                    class="close-menu-button"
+                    src="assets/images/icon-close.svg"
+                    alt="Close"
+                    aria-hidden="false"
+                  />
+                </button>
+              </header>
+
+              <ul class="navigation__list color-white">
+                <li class="navigation__item">
+                  <a href="navigation__link">About</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="navigation__link">Careers</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="navigation__link">Events</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="navigation__link">Products</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="navigation__link">Support</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </header>
         <div class="hero__border color-white">
           <h1 class="hero__heading">Immersive experiences that deliver</h1>
