@@ -3,6 +3,8 @@ const closeMenuButton = document.getElementById("close-menu-button");
 
 const navigationContent = document.querySelector(".navigation__content");
 
+const mainContent = document.querySelector(".main-content");
+
 const updateBodyScroll = (mode) => {
   const body = document.querySelector("body");
   const bodyScrollLock = bodyScrollLockUpgrade;
@@ -21,6 +23,8 @@ const handleOpenMenuButtonOnClick = (props) => {
 
   navigationContent.classList.add("active");
 
+  mainContent.setAttribute("inert", "");
+
   updateBodyScroll("disable");
 
   closeMenuButton.focus();
@@ -35,6 +39,8 @@ const handleCloseMenuButtonOnClick = (props) => {
   closeMenuButton.setAttribute("aria-hidden", "true");
 
   navigationContent.classList.remove("active");
+
+  mainContent.removeAttribute("inert");
 
   updateBodyScroll("enable");
 
