@@ -8,33 +8,53 @@
   .navigation {
     display: flex;
 
-    &__content {
-      display: none;
-    }
+    &__link {
+      position: relative;
+      padding-bottom: 0.2em;
 
-    &__content.active {
-      display: block;
-      position: absolute;
-      inset: 0;
-      background-color: var(--color-black);
-      padding: 0 5%;
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2em 0;
+      &::after {
+        content: "";
       }
 
-      .navigation__list {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.6em;
-        font-size: 2em;
-        font-family: "Josefin Sans", var(--font-stack);
-        margin: 35% 0;
-        text-transform: uppercase;
+      &:is(:hover, :active, :focus)::after {
+        display: block;
+        width: 25%;
+        height: 0.05em;
+        background-color: var(--color-white);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &__content {
+      display: none;
+
+      &.active {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-black);
+        padding: 0 5%;
+
+        header {
+          display: flex;
+          justify-content: space-between;
+          padding: 2em 0;
+        }
+
+        .navigation__list {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.6em;
+          font-size: 2em;
+          font-family: "Josefin Sans", var(--font-stack);
+          margin: 35% 0;
+          text-transform: uppercase;
+        }
       }
     }
   }
@@ -64,5 +84,50 @@
 
   &__heading {
     font-size: 3.2rem;
+  }
+}
+
+.content {
+  height: 100vh;
+}
+
+.footer {
+  height: 75vh;
+  padding: 4em 0;
+  text-align: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2em;
+    height: 100%;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
   }
 }
