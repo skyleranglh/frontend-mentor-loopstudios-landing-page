@@ -1,3 +1,5 @@
+@import "../abstracts/mixins";
+
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -15,19 +17,13 @@
       }
 
       &:is(:hover, :active, :focus)::after {
-        display: block;
-        width: 25%;
-        height: 0.05em;
-        background-color: var(--color-white);
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
+        @include active-border-bottom;
       }
     }
 
     &__content {
       display: none;
+      z-index: 1;
 
       &.active {
         display: block;
@@ -35,12 +31,6 @@
         inset: 0;
         background-color: var(--color-black);
         padding: 0 5%;
-
-        header {
-          display: flex;
-          justify-content: space-between;
-          padding: 2em 0;
-        }
 
         .navigation__list {
           position: relative;
@@ -54,6 +44,12 @@
           text-transform: uppercase;
         }
       }
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 2em 0;
     }
   }
 }

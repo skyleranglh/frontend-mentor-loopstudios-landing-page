@@ -1,0 +1,10 @@
+@mixin active-border-bottom {
+  display: block;
+  width: 25%;
+  height: 0.05em;
+  background-color: var(--color-white);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
