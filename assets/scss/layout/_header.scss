@@ -1,0 +1,59 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+
+  .navigation {
+    display: flex;
+
+    &__link {
+      position: relative;
+      padding-bottom: 0.2em;
+
+      &::after {
+        content: "";
+      }
+
+      &:is(:hover, :active, :focus)::after {
+        display: block;
+        width: 25%;
+        height: 0.05em;
+        background-color: var(--color-white);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &__content {
+      display: none;
+
+      &.active {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-black);
+        padding: 0 5%;
+
+        header {
+          display: flex;
+          justify-content: space-between;
+          padding: 2em 0;
+        }
+
+        .navigation__list {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.6em;
+          font-size: 2em;
+          font-family: var(--secondary-font);
+          margin: 35% 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
