@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (width >= 42em) {
+  @media (width >= 46em) {
     background-image: url("../images/desktop/image-hero.jpg");
     min-height: 65vh;
   }
@@ -24,7 +24,7 @@
     transform: translate(-50%, -50%);
     border: 2px solid var(--color-white);
 
-    @media (width >= 42em) {
+    @media (width >= 46em) {
       position: static;
       transform: none;
       width: 28em;
