@@ -6,17 +6,29 @@
 
   @media (width >= 42em) {
     background-image: url("../images/desktop/image-hero.jpg");
-    height: 50vh;
+    min-height: 65vh;
   }
 
   .container {
+    display: grid;
+    gap: 4em;
     height: 100%;
   }
 
   &__border {
-    border: 2px solid white;
-    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
     padding: 1.2em;
-    margin: 35% 0;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--color-white);
+
+    @media (width >= 42em) {
+      position: static;
+      transform: none;
+      width: 28em;
+      padding-right: 2em;
+    }
   }
 }
