@@ -1,5 +1,6 @@
-@forward "../components/hero";
-@import "../abstracts/mixins";
+@use "../components/hero";
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
 
 .top-header {
   display: flex;
