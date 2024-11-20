@@ -1,0 +1,40 @@
+.footer {
+  min-height: 75vh;
+  padding: 4em 0;
+  text-align: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 4em;
+    height: 100%;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+  }
+}
