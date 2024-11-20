@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "../abstracts/variables" as *;
+
 .content {
   display: flex;
   flex-direction: column;
@@ -27,13 +30,6 @@
   }
 }
 
-$article-images: "../images/mobile/images-deep-earth.jpg",
-  "../images/mobile/images-night-arcade.jpg",
-  "../images/mobile/images-soccer-team.jpg", "../images/mobile/images-grid.jpg",
-  "../images/mobile/images-from-above.jpg",
-  "../images/mobile/images-pocket-borealis.jpg",
-  "../images/mobile/images-curiosity.jpg", "../images/mobile/images-fisheye.jpg";
-
 .gallery {
   display: flex;
   flex-direction: column;
@@ -51,10 +47,24 @@ $article-images: "../images/mobile/images-deep-earth.jpg",
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 1.4em;
-    height: 10em;
+    padding: 3em 2em;
+    height: 14em;
     background-color: black;
     text-align: left;
+
+    @each $article-image in $article-mobile-images {
+      $i: index($article-mobile-images, $article-image);
+      &--#{$i} {
+        background-image: url($article-image);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media (width >= 46em) {
+          background-image: url(list.nth($article-desktop-images, $i));
+        }
+      }
+    }
 
     &__heading {
       width: 5.4em;
