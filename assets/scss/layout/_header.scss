@@ -1,3 +1,4 @@
+@forward "../components/hero";
 @import "../abstracts/mixins";
 
 .top-header {
@@ -7,6 +8,18 @@
 
   .navigation {
     display: flex;
+
+    .open-menu-button {
+      @media (width >= 46em) {
+        display: none;
+      }
+    }
+
+    .close-menu-button {
+      @media (width >= 46em) {
+        display: none;
+      }
+    }
 
     &__link {
       position: relative;
@@ -24,6 +37,19 @@
     &__content {
       display: none;
       z-index: 1;
+
+      @media (width >= 46em) {
+        display: flex;
+      }
+
+      .navigation__list {
+        @media (width >= 46em) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1.4em;
+        }
+      }
 
       &.active {
         display: block;
@@ -50,6 +76,10 @@
       display: flex;
       justify-content: space-between;
       padding: 2em 0;
+
+      @media (width >= 46em) {
+        display: none;
+      }
     }
   }
 }
