@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "../abstracts/variables" as *;
+@use "../components/button";
 
 .content {
   display: flex;
@@ -7,6 +8,10 @@
   gap: 4em;
   min-height: 100vh;
   padding: 4em 0;
+
+  @media (width >= 46em) {
+    padding: 6em 0;
+  }
 }
 
 .section {
@@ -36,10 +41,40 @@
   text-align: center;
   gap: 3em;
 
+  @media (width >= 46em) {
+    gap: 4em;
+  }
+
+  &__header {
+    .button {
+      display: none;
+    }
+
+    @media (width >= 46em) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .button {
+        display: flex;
+      }
+    }
+  }
+
   &__articles {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
+    width: 100%;
+
+    @media (width >= 46em) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+    }
+
+    @media (width >= 58em) {
+      grid-template-columns: repeat(4, minmax(10em, 1fr));
+    }
   }
 
   .article {
@@ -52,9 +87,14 @@
     background-color: black;
     text-align: left;
 
+    @media (width >= 46em) {
+      height: 34em;
+      padding: 2em;
+    }
+
     @each $article-image in $article-mobile-images {
       $article-image-index: index($article-mobile-images, $article-image);
-      &--#{$i} {
+      &--#{$article-image-index} {
         background-image: url($article-image);
         background-size: cover;
         background-repeat: no-repeat;
@@ -71,21 +111,20 @@
 
     &__heading {
       width: 5.4em;
+
+      @media (width >= 46em) {
+        font-size: 2em;
+      }
     }
   }
 
   &__button {
-    padding: 0.8em 2.4em;
-    border: 2px solid var(--color-black);
-    font-size: 1.4rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.8ch;
+    @extend .button;
     align-self: center;
 
-    &:is(:hover, :active, :focus) {
-      color: var(--color-white);
-      background-color: var(--color-black);
+    @media (width >= 46em) {
+      display: none;
+      font-size: 0.8rem;
     }
   }
 }
