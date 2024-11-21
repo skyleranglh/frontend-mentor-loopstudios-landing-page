@@ -53,7 +53,7 @@
     text-align: left;
 
     @each $article-image in $article-mobile-images {
-      $i: index($article-mobile-images, $article-image);
+      $article-image-index: index($article-mobile-images, $article-image);
       &--#{$i} {
         background-image: url($article-image);
         background-size: cover;
@@ -61,7 +61,10 @@
         background-position: center;
 
         @media (width >= 46em) {
-          background-image: url(list.nth($article-desktop-images, $i));
+          background-image: url(list.nth(
+            $article-desktop-images,
+            $article-image-index
+          ));
         }
       }
     }
