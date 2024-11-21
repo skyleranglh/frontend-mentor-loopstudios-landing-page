@@ -1,7 +1,16 @@
+@use "../abstracts/mixins";
+
 .footer {
   min-height: 75vh;
   padding: 4em 0;
   text-align: center;
+
+  @media (width >= 46em) {
+    display: flex;
+    align-items: center;
+    min-height: 20vh;
+    padding: 0;
+  }
 
   .container {
     display: flex;
@@ -9,6 +18,11 @@
     flex-direction: column;
     gap: 4em;
     height: 100%;
+
+    @media (width >= 46em) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   .navigation {
@@ -18,10 +32,32 @@
     flex-direction: column;
     gap: 2em;
 
+    @media (width >= 46em) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
     &__list {
       display: flex;
       flex-direction: column;
       gap: 2em;
+
+      @media (width >= 46em) {
+        flex-direction: row;
+      }
+    }
+
+    &__link {
+      position: relative;
+      padding-bottom: 0.2em;
+
+      &::after {
+        content: "";
+      }
+
+      &:is(:hover, :active, :focus)::after {
+        @include mixins.active-border-bottom;
+      }
     }
   }
 
@@ -30,11 +66,35 @@
     flex-direction: column;
     gap: 1.4em;
 
+    @media (width >= 46em) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 2em;
+    }
+
     &__list {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 1em;
     }
+  }
+
+  .social__link {
+    position: relative;
+    padding-bottom: 0.2em;
+
+    &::after {
+      content: "";
+    }
+
+    &:is(:hover, :active, :focus)::after {
+      @include mixins.active-border-bottom;
+      width: 100%;
+    }
+  }
+
+  .social__icon {
+    height: 100%;
   }
 }
