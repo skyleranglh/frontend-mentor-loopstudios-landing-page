@@ -12,6 +12,10 @@
   @media (width >= 46em) {
     padding: 6em 0;
   }
+
+  @media (width >= 70em) {
+    gap: 12em;
+  }
 }
 
 .section {
@@ -20,14 +24,35 @@
   gap: 3em;
   text-align: center;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+  @media (width >= 70em) {
+    position: relative;
+    text-align: left;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   &__image {
     width: 100%;
+
+    @media (width >= 70em) {
+      width: 32em;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    @media (width >= 70em) {
+      position: absolute;
+      top: 8em;
+      left: 24em;
+      padding: 4em;
+      background: var(--color-white);
+      width: 37.5em;
+    }
   }
 
   &__description {
@@ -90,6 +115,10 @@
     @media (width >= 46em) {
       height: 34em;
       padding: 2em;
+    }
+
+    @media (width >= 58em) {
+      height: 24em;
     }
 
     @each $article-image in $article-mobile-images {
