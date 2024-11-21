@@ -1,0 +1,13 @@
+.button {
+  padding: 0.8em 2.4em;
+  border: 2px solid var(--color-black);
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.8ch;
+
+  &:is(:hover, :active, :focus) {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+}
