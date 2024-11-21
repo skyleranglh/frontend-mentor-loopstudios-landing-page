@@ -4,7 +4,8 @@
       "format": "compressed",
       "extensionName": ".css",
       "savePath": "/assets/css",
-      "savePathReplacementPairs": null
+      "savePathReplacementPairs": null,
     }
-  ]
+  ],
+  "liveSassCompile.settings.showOutputWindowOn": "Debug",
 }
