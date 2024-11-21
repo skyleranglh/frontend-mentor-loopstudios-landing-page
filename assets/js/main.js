@@ -5,6 +5,8 @@ const navigationContent = document.querySelector(".navigation__content");
 
 const mainContent = document.querySelector(".main-content");
 
+const media = window.matchMedia("(width < 46em)");
+
 const updateBodyScroll = (mode) => {
   const body = document.querySelector("body");
   const bodyScrollLock = bodyScrollLockUpgrade;
@@ -47,6 +49,13 @@ const handleCloseMenuButtonOnClick = (props) => {
   openMenuButton.focus();
 };
 
+const handleResize = (props) => {
+  const { openMenuButton, closeMenuButton, navigationContent } = props.elements;
+  handleCloseMenuButtonOnClick({
+    elements: { openMenuButton, closeMenuButton, navigationContent },
+  });
+};
+
 openMenuButton.addEventListener("click", () =>
   handleOpenMenuButtonOnClick({
     elements: { openMenuButton, closeMenuButton, navigationContent },
@@ -54,6 +63,12 @@ openMenuButton.addEventListener("click", () =>
 );
 closeMenuButton.addEventListener("click", () =>
   handleCloseMenuButtonOnClick({
+    elements: { openMenuButton, closeMenuButton, navigationContent },
+  })
+);
+
+media.addEventListener("change", () =>
+  handleResize({
     elements: { openMenuButton, closeMenuButton, navigationContent },
   })
 );
