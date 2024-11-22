@@ -5,6 +5,8 @@ const navigationContent = document.querySelector(".navigation__content");
 
 const mainContent = document.querySelector(".main-content");
 
+const copyrightYear = document.querySelector(".copyright__year");
+
 const media = window.matchMedia("(width < 46em)");
 
 const updateBodyScroll = (mode) => {
@@ -56,6 +58,13 @@ const handleResize = (props) => {
   });
 };
 
+const handleOnLoad = (props) => {
+  const { copyrightYear } = props.elements;
+  const currentYear = new Date().getFullYear();
+
+  copyrightYear.innerText = currentYear;
+};
+
 openMenuButton.addEventListener("click", () =>
   handleOpenMenuButtonOnClick({
     elements: { openMenuButton, closeMenuButton, navigationContent },
@@ -72,3 +81,9 @@ media.addEventListener("change", () =>
     elements: { openMenuButton, closeMenuButton, navigationContent },
   })
 );
+
+window.addEventListener("load", () => {
+  handleOnLoad({
+    elements: { copyrightYear },
+  });
+});
