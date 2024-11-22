@@ -3,8 +3,7 @@
 @use "../components/button";
 
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 4em;
   min-height: 100vh;
   padding: 4em 0;
@@ -33,7 +32,7 @@
     width: 100%;
 
     @media (width >= 70em) {
-      width: 32em;
+      width: 75%;
     }
   }
 
@@ -44,8 +43,8 @@
 
     @media (width >= 70em) {
       position: absolute;
-      top: 8em;
-      left: 24em;
+      top: 10em;
+      left: 28.5em;
       padding: 4em;
       background: var(--color-white);
       width: 37.5em;
@@ -58,8 +57,7 @@
 }
 
 .gallery {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   text-align: center;
   gap: 3em;
 
@@ -90,7 +88,7 @@
     width: 100%;
 
     @media (width >= 70em) {
-      grid-template-columns: repeat(4, minmax(10em, 1fr));
+      grid-template-columns: repeat(4, minmax(9em, 1fr));
     }
   }
 

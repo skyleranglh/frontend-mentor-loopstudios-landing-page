@@ -9,6 +9,11 @@
     min-height: 62.5vh;
   }
 
+  @media (width >= 90em) {
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+
   .container {
     display: grid;
     gap: 4em;
