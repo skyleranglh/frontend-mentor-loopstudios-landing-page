@@ -5,7 +5,7 @@
   padding: 4em 0;
   text-align: center;
 
-  @media (width >= 46em) {
+  @media (width >= 62em) {
     display: flex;
     align-items: center;
     min-height: 20vh;
@@ -19,7 +19,7 @@
     gap: 4em;
     height: 100%;
 
-    @media (width >= 46em) {
+    @media (width >= 62em) {
       flex-direction: row;
       align-items: center;
     }
@@ -32,9 +32,10 @@
     flex-direction: column;
     gap: 2em;
 
-    @media (width >= 46em) {
+    @media (width >= 62em) {
       justify-content: flex-start;
       align-items: flex-start;
+      gap: 1.4em;
     }
 
     &__list {
@@ -42,7 +43,7 @@
       flex-direction: column;
       gap: 2em;
 
-      @media (width >= 46em) {
+      @media (width >= 62em) {
         flex-direction: row;
       }
     }
@@ -64,9 +65,10 @@
   .socials {
     display: flex;
     flex-direction: column;
-    gap: 1.4em;
+    gap: 1.5em;
 
-    @media (width >= 46em) {
+    @media (width >= 62em) {
+      text-align: right;
       justify-content: flex-end;
       align-items: flex-end;
       gap: 2em;
