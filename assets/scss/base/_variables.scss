@@ -10,4 +10,14 @@
   --secondary-font: "Josefin Sans", var(--font-stack);
 
   --article-link-active: hsl(0, 0%, 100%, 0.5);
+  --article-overlay-linear-gradient: hsla(0, 0%, 0%, 0.6) 0%,
+    hsla(0, 0%, 0%, 0.3) 50%, hsla(0, 0%, 100%, 0) 100%;
+  --mobile-article-overlay-linear-gradient: linear-gradient(
+    87deg,
+    var(--article-overlay-linear-gradient)
+  );
+  --desktop-article-overlay-linear-gradient: linear-gradient(
+    0deg,
+    var(--article-overlay-linear-gradient)
+  );
 }
